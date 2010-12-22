@@ -1,0 +1,132 @@
+invalid memory read
+[exception info]
+   time stamp: 0x0000000c02a89d67
+   status:$12: 0x2000ff03, cause:$13: 0x00000008
+ badvaddr: $8: 0x00000008,   epc:$14: 0x8164bb54
+[object info]
+ context: 0x8020e7e0, state: 0x00000001
+ last context: 0x00000000,last thread: 0x00000000
+[initial value info]
+ sr:$12: 0x0000ff03
+[register dump]
+ at: r1: 0x819f4f00, v0: r2: 0x0000002c, v1: r3: 0x00000000, a0: r4: 0x612f96c0
+ a1: r5: 0x80a7e768, a2: r6: 0x00000001, a3: r7: 0x81ad7e50, t0: r8: 0x80a7e628
+ t1: r9: 0x37e80000, t2:r10: 0xafbf0000, t3:r11: 0xffff0000, t4:r12: 0x81ad7e50
+ t5:r13: 0x00000000, t6:r14: 0x00000001, t7:r15: 0x000f29c8, s0:r16: 0x612f96ec
+ s1:r17: 0x0000000b, s2:r18: 0x8024fe88, s3:r19: 0x808eb8e0, s4:r20: 0x696e6974
+ s5:r21: 0x8010bac0, s6:r22: 0x808eb7e0, s7:r23: 0x00000000, t8:r24: 0x000000b2
+ t9:r25: 0x8164bb14, gp:r28: 0x81ad7e50, sp:r29: 0x80a7e6a8, s8:r30: 0x80a7e6d8
+ ra:r31: 0x81466838, hi:   : 0x0001b3a9, lo:   : 0x6d4d3941
+
+exception code:  2 TLB exception (load or instruction fetch)
+
+[system control co-processor registers]
+   Index 0x0000000b   Random 0x00000026 EntryLo0 0x01c00317 EntryLo1 0x00000001
+ Context 0x00000000 PageMask 0x00000000    Wired 0x0000000c      ??? ----------
+BadVAddr 0x00000008    Count 0x246585fa  EntryHi 0x000000ff  Compare 0x02be9ea7
+  Status 0x20007f00    Cause 0x1000802c      EPC 0x800b6318     PRId 0x00002753
+  Config 0x404664bb   LLAddr 0x001cdd1f      ??? ----------      ??? ----------
+XContext 0x00000000      ??? ----------      ??? ----------      ??? ----------
+     ??? ----------      ??? ----------      ECC 0x00000000 CacheErr 0x90000ffb
+   TagLo 0x00000000    TagHi 0x00000000 ErrorEPC 0xbfc00e14      ??? ----------
+[floating-point general registers]
+ $f00: 0x00000000 $f01: 0x00000000 $f02: 0x00000000 $f03: 0x00000000
+ $f04: 0x00000000 $f05: 0x00000000 $f06: 0x42ce0000 $f07: 0x00000000
+ $f08: 0x4001eb85 $f09: 0x3eb0c6f7 $f10: 0xa0b5ed8d $f11: 0x3eb0c6f7
+ $f12: 0xbe2d234f $f13: 0x00000000 $f14: 0xc11f9c97 $f15: 0x00000000
+ $f16: 0xfffd6b88 $f17: 0x00000000 $f18: 0xff67c84e $f19: 0x00000000
+ $f20: 0x3f800000 $f21: 0x00000000 $f22: 0x00000000 $f23: 0x00000000
+ $f24: 0x3f800000 $f25: 0x00000000 $f26: 0x3f800000 $f27: 0x00000000
+ $f28: 0x41200000 $f29: 0x00000010 $f30: 0x00000000 $f31: 0x3eb0c6f7
+[floating-point control registers]
+  $0:fp_eir: 0x00002750
+ $31:fp_csr: 0x01000000 (bit[17-0]: ----------------RN)
+[object list]
+Name                   ContextID  ThreadID   ExecSpcID  OID        MetaSpace
+-------------------------------------------------------------------------------
+systemCore             0x801fada0 0x801faf40 0x801faf00 ---------- mCore
+systemCore(1)          0x801fbba0 0x801fbd00 0x801faf00 ---------- mCore
+mCOOPReflector         0x801ff380 0x80200b80 0x80200380 0x8000000b mCore
+uniMailer              0x801ff4e0 0x80200be0 0x802003c0 0x8000000c mCore
+mCOOPFaultHandler      0x801ff640 0x80200c40 0x80200400 0x8000000d mCore
+mDriveFaultHandler     0x801ff7a0 0x80200ca0 0x80200440 0x8000000e mCore
+registryManager        0x801ff900 0x80200d00 0x80200480 0x8000000f mCore
+addressManager         0x801ffa60 0x80200d60 0x802004c0 0x80000010 mCore
+kernelModeLib          0x801ffbc0 0x80200dc0 0x80200500 0x80000011 mCore
+mCoreReflector         0x801ffd20 0x80200e20 0x80200540 0x80000012 mCore
+idle                   0x801ffe80 0x80200e80 0x80200580 0x80000013 mCore
+exceptionHandler       0x801fffe0 0x80200ee0 0x802005c0 0x80000014 mCore
+analyzer               0x80200140 0x80200f40 0x80200600 0x80000015 mCore
+mDriveReflector        0x80205140 0x80200fa0 0x80200640 0x80000016 mCore
+obletManager           0x80204fe0 0x80201000 0x80200680 0x80000017 mCore
+installer              0x80204e80 0x80201060 0x802006c0 0x80000018 mCore
+driverManager          0x80204d20 0x802010c0 0x80200700 0x80000019 mCore
+objectManager          0x80204bc0 0x80201120 0x80200740 0x8000001a mCore
+mClassReflector        0x80204a60 0x80201180 0x80200780 0x8000001b mCore
+mSystemReflector       0x80204900 0x802011e0 0x802007c0 0x8000001c mCore
+mAVFaultHandler        0x802047a0 0x80201240 0x80200800 0x8000001d mCore
+mAVReflector           0x80204640 0x802012a0 0x80200840 0x8000001e mCore
+mAVInit                0x802044e0 0x80201300 0x80200880 0x8000001f mCore
+avManager              0x80204380 0x80205b00 0x802008c0 0x80000020 mCore
+eventManager           0x80208940 0x80205aa0 0x80200900 0x80000021 mCore
+downloader             0x802083c0 0x80205920 0x80200a00 0x80000028 mSystem
+nonBlockingFileSystemManager 0x80208260 0x802058c0 0x80200a40 0x80000029 mDrive
+openrBusManager        0x80208100 0x80205860 0x80200a80 0x8000002a mDrive
+openrBusManager(1)     0x8020ce40 0x8020c740 0x80200a80 0x8000002a mDrive
+bmnDriver              0x80207fa0 0x80205800 0x80200ac0 0x8000002b mDrive
+bmnDriver(1)           0x80209a60 0x802054a0 0x80200ac0 0x8000002b mDrive
+fbkDriver              0x80207e40 0x802057a0 0x80200b00 0x8000002c mDrive
+fbkDriver(1)           0x8020cce0 0x8020c6e0 0x80200b00 0x8000002c mDrive
+fbkDriver(2)           0x8020cb80 0x8020c680 0x80200b00 0x8000002c mDrive
+cardManager            0x80207ce0 0x80205740 0x80200b40 0x8000002d mDrive
+cardManager(1)         0x8020cfa0 0x8020c7a0 0x80200b40 0x8000002d mDrive
+memoryStickDriver      0x80207b80 0x802056e0 0x80209340 0x8000002e mDrive
+memoryStickDriver(1)   0x80209bc0 0x80205500 0x80209340 0x8000002e mDrive
+fatFileSystem          0x8020a140 0x80205680 0x80209300 0x8000002f mCOOP
+memoryStickWatcher     0x80209fe0 0x80205620 0x802092c0 0x80000030 mDrive
+oobjectManager         0x80209e80 0x802055c0 0x80209280 0x80000031 mCOOP
+aperiosClass           0x80209d20 0x80205560 0x80209240 0x80000032 mClass
+opowerManager          0x802087e0 0x80205a40 0x80200940 0x80000033 mCOOP
+oserviceManager        0x80208680 0x802059e0 0x80200980 0x80000034 mCOOP
+ovirtualRobot          0x80208520 0x80205980 0x802009c0 0x80000035 mCOOP
+odesignedRobot         0x80209900 0x80205440 0x80209200 0x80000036 mCOOP
+osystemLogger          0x802097a0 0x802053e0 0x802091c0 0x80000037 mCOOP
+ovirtualRobotComm      0x80209640 0x80205380 0x80209180 0x80000038 mCOOP
+ovirtualRobotAudioComm 0x802094e0 0x8020cb00 0x80209140 0x80000039 mCOOP
+IPStack                0x8020d940 0x8020ca40 0x80209100 0x8000003a mDrive
+OrinocoEnabler         0x8020d7e0 0x8020c9e0 0x802090c0 0x8000003b mDrive
+hookConsoleIO          0x8020d680 0x8020c980 0x80209080 0x8000003c mDrive
+emergencyMonitor       0x8020d520 0x8020c920 0x80209040 0x8000003d mCOOP
+netconf                0x8020d3c0 0x8020c8c0 0x80209000 0x8000003e mCOOP
+anttcpio               0x8020d260 0x8020c860 0x80208fc0 0x8000003f mDrive
+hookConsoleIOActivator 0x8020d100 0x8020c800 0x80208f80 0x80000040 mCOOP
+MarvellDriver          0x80209380 0x8020caa0 0x80208f40 0x80000041 mDrive
+MarvellDriver(1)       0x8020e940 0x8020c620 0x80208f40 0x80000041 mDrive
+MainObj                0x8020e7e0 0x8020c5c0 0x80208f00 0x80000042 mCOOP
+MotoObj                0x8020e680 0x8020c560 0x80208ec0 0x80000043 mCOOP
+TinyFTPD               0x8020e520 0x8020c500 0x80208e80 0x80000044 mCOOP
+SoundPlay              0x8020e3c0 0x8020c4a0 0x80208e40 0x80000045 mCOOP
+tcpgw                  0x8020e260 0x8020c440 0x80208e00 0x80000046 mCOOP
+[stack info]
+ area: 0x80a7a7a8 - 0x80a7e7a8, sp: 0x80a7e6a8
+[stack dump]
+80a7e668: 81ad7e50 816ed9a8 81ad7e50 80a7e680  P~....n.P~......
+80a7e678: 813c3450 80a7e688 81ad7e50 81adced4  P4<.....P~......
+80a7e688: 61362308 808eb8e0 61362308 8010bac0  .#6a.....#6a....
+80a7e698: 80a7e6f0 60a86f98 00000031 81ad7e50  .....o.`1...P~..
+80a7e6a8: 813ba9c4 00000001 80a7e6f0 81adced4  ..;.............
+80a7e6b8: 81ad7e50 00000001 00000031 00000001  P~......1.......
+80a7e6c8: 8024fe88 81ad7e50 81466838 81466df8  ..$.P~..8hF..mF.
+80a7e6d8: 80a7e710 81adc44c 80a7e6f0 00000001  ....L...........
+80a7e6e8: 81ad7e50 80a7e6f8 81a31e50 00000001  P~......P.......
+80a7e6f8: 81adced4 00000000 81adce00 00000001  ................
+80a7e708: 81ad7e01 00000000 81adc44c 80a7e6f0  .~......L.......
+80a7e718: 00000007 00000004 00000031 81ad7e50  ........1...P~..
+80a7e728: 80a7e730 8146510c 81adc270 80a7e768  0....QF.p...h...
+80a7e738: 81adc270 80a7e770 81ad7e50 00000001  p...p...P~......
+80a7e748: 81ad7e50 00000000 81465d1c 00000000  P~.......]F.....
+80a7e758: 80a7e768 80a7e790 80a7e770 00000029  h.......p...)...
+80a7e768: 00000002 804bf9c8 0000001b 00000002  ......K.........
+80a7e778: 80000042 0000003c 00000000 80000042  B...<.......B...
+80a7e788: 0000002b 0000000b 00000000 c0a801b5  +...............
+80a7e798: ddff272f c0a80164 ffffc67f 00000920  /'..d....... ...
