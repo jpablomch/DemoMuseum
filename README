@@ -1,0 +1,43 @@
+GUIMuseum
+
+To compile go inside /source and, 
+$ javac metrobotics/*.java
+
+To run go inside /source and,
+$ java metrobotics/appMain -s <server ip> <server port>
+
+*****************************************
+
+LFD Aibo
+To compile go inside the folder and,
+$ javac *.java
+
+To run go inside the folder and,
+$ java AiboLFD -lfd
+
+When you run it, the program is going to create a few sockets. To end the program press the key "q" so the program closes all the ports and you can run it again without having to restart the AIBO. 
+There is a bug that causes a problem when you try to run the program again. If the programs stops and prints this:
+"Opening ports
+Reached here"
+Just run the program again and it will run fine. I am going to fix this bug in January. Feel free to fix it if you want.
+
+When the program is running you have a few options pressing the following keys:
+
+q - end the program
+
+w - makes the AIBO walk straight 
+
+Right Arrow - rotate right
+
+Left Arrow - rotate 
+
+s - Starts the Learning from Demonstration
+
+
+*****************************************
+
+AIBO Memory Stick 
+
+Memory Stick "Rachel" is ready to be used.
+
+
