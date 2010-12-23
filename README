@@ -13,7 +13,7 @@ LFD Aibo
 To compile go inside the folder and,
 $ javac *.java
 
-To run the program the AIBO has to be ready. Then go inside the folder AiboL... and,
+To run the program the AIBO has to be ready and the computer running the program has to be connected to aibonet. Then go inside the folder AiboL... and,
 $ java AiboLFD -lfd
 
 When you run it, the program is going to create a few sockets. To end the program press the key "q" so the program closes all the ports and you can run it again without having to restart the AIBO. 
