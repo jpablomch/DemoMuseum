@@ -9,10 +9,11 @@ $ java metrobotics/appMain -s <server ip> <server port>
 *****************************************
 
 LFD Aibo
+
 To compile go inside the folder and,
 $ javac *.java
 
-To run go inside the folder and,
+To run the program the AIBO has to be ready. Then go inside the folder AiboL... and,
 $ java AiboLFD -lfd
 
 When you run it, the program is going to create a few sockets. To end the program press the key "q" so the program closes all the ports and you can run it again without having to restart the AIBO. 
@@ -33,11 +34,10 @@ Left Arrow - rotate
 
 s - Starts the Learning from Demonstration
 
-
 *****************************************
 
 AIBO Memory Stick 
 
 Memory Stick "Rachel" is ready to be used.
 
-
+*****************************************
