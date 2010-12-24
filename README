@@ -10,6 +10,8 @@ $ java metrobotics/appMain -s <server ip> <server port>
 
 LFD Aibo
 
+There is a bug in Ubuntu. You need to make the window bigger. Also, the order of the buttons is reversed. 
+
 To compile go inside the folder and,
 $ javac *.java
 
@@ -26,7 +28,7 @@ When the program is running you have a few options pressing the following keys:
 
 q - end the program
 
-w - makes the AIBO walk straight 
+w - makes the AIBO walk straight or stop if it is working 
 
 Right Arrow - rotate right
 
