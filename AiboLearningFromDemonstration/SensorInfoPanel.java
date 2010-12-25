@@ -137,7 +137,7 @@ public class SensorInfoPanel extends JPanel implements Runnable {
 		if(aibo.version == 0){
 			wFF = aibo.worldFarFront;
 			wNF = aibo.worldNearFront;
-			wCH = aibo.worldChest;
+//			wCH = aibo.worldChest;
 			wFL = aibo.worldFarLeft;
 			wNL = aibo.worldNearLeft;
 			wFR = aibo.worldFarRight;
@@ -154,37 +154,60 @@ public class SensorInfoPanel extends JPanel implements Runnable {
         g2.drawImage(image, 10, 10, this);
 //        g2.drawLine(this.getWidth()/2, 0, this.getWidth()/2, this.getHeight());
  
-        
-        if(wFF >1450.0){
-        	csensorFarFront = sensorOff;
-        }
-        else 
-        	csensorFarFront = sensorOn;
-        g2.setColor(csensorFarFront);
-        g2.fillOval(this.getWidth()/2-125, 20, 250, 15);
-        g2.setColor(Color.yellow);
-        g2.drawString("" + df.format(wFF), this.getWidth()/2-20, 33);
-        
-        if(wNF>450.0){
-        	csensorNearFront = sensorOff;
-        }
-        else 
-        	csensorNearFront = sensorOn;
-        g2.setColor(csensorNearFront);
-        g2.fillOval(this.getWidth()/2-125, 50, 250, 15);
-        g2.setColor(Color.yellow);
-        g2.drawString("" + df.format(wNF), this.getWidth()/2-20, 62);
-        
-        
-        if(aibo.sensor.getSensor(LFDConst.SENSOR_CHEST)>850.0){
-        	csensorChest = sensorOff;
-        }
-        else 
-        	csensorChest = sensorOn;
-        g2.setColor(csensorChest);
-        g2.fillRect(this.getWidth()/2-50, 73, 100, 15);
-        g2.setColor(Color.yellow);
-        g2.drawString("" + df.format(aibo.sensor.getSensor(LFDConst.SENSOR_CHEST)), this.getWidth()/2-20, 86);
+        /* Commented for Museum. We want a simpler interface for the kids.
+//        if(wFF >1450.0){
+//        	csensorFarFront = sensorOff;
+//        }
+//        else 
+//        	csensorFarFront = sensorOn;
+//        g2.setColor(csensorFarFront);
+//        g2.fillOval(this.getWidth()/2-125, 20, 250, 15);
+//        g2.setColor(Color.yellow);
+//        g2.drawString("" + df.format(wFF), this.getWidth()/2-20, 33);
+//        
+//        if(wNF>450.0){
+//        	csensorNearFront = sensorOff;
+//        }
+//        else 
+//        	csensorNearFront = sensorOn;
+//        g2.setColor(csensorNearFront);
+//        g2.fillOval(this.getWidth()/2-125, 50, 250, 15);
+//        g2.setColor(Color.yellow);
+//        g2.drawString("" + df.format(wNF), this.getWidth()/2-20, 62);
+        */
+
+		// Front sensors for Museum. 
+		// We are going to care about objects closer than 50cm. 
+		// @
+		if(wFF > 500.0){
+			csensorNearFront = sensorOff;
+			g2.setColor(csensorNearFront);
+			g2.fillOval(this.getWidth()/2-125, 50, 250, 15);
+			g2.setColor(Color.yellow);
+			g2.drawString("" + df.format(wFF), this.getWidth()/2-20, 62);
+		}
+		else {
+			csensorNearFront = sensorOn;
+			double avgFront = (wFF + wNF) / 2;
+			g2.setColor(csensorNearFront);
+			g2.fillOval(this.getWidth()/2-125, 50, 250, 15);
+			g2.setColor(Color.yellow);
+			g2.drawString("" + df.format(avgFront), this.getWidth()/2-20, 62);
+			System.out.println("Front " + wFF + " " + wNF);
+		}
+		// END Museum code
+		
+		
+        /* Commented for Museum. We want a simpler Interface
+//        if(aibo.sensor.getSensor(LFDConst.SENSOR_CHEST)>850.0){
+//        	csensorChest = sensorOff;
+//        }
+//        else 
+//        	csensorChest = sensorOn;
+//        g2.setColor(csensorChest);
+//        g2.fillRect(this.getWidth()/2-50, 73, 100, 15);
+//        g2.setColor(Color.yellow);
+//        g2.drawString("" + df.format(aibo.sensor.getSensor(LFDConst.SENSOR_CHEST)), this.getWidth()/2-20, 86);
         
         if(wFL >1450.0){
         	csensorFarLeft = sensorOff;
@@ -192,9 +215,9 @@ public class SensorInfoPanel extends JPanel implements Runnable {
         else 
         	csensorFarLeft = sensorOn;
         g2.setColor(csensorFarLeft);
-        g2.fillOval(30/*this.getWidth()/6-7*/, 50, 15, 250);
+        g2.fillOval(30, 50, 15, 250);
         g2.setColor(Color.yellow);
-        g2.drawString("FL" + df.format(wFL), 10/*this.getWidth()/6-7*/, 70);
+        g2.drawString("FL" + df.format(wFL), 10, 70);
         
         if(wNL>450.0){
         	csensorNearLeft = sensorOff;
@@ -205,7 +228,32 @@ public class SensorInfoPanel extends JPanel implements Runnable {
         g2.fillOval(this.getWidth()/6, 50, 15, 250);
         g2.setColor(Color.yellow);
         g2.drawString("NL" + df.format(wNL), this.getWidth()/6-15, 125);
-
+		*/
+		
+		
+		// Left sensors for Museum. 
+		// We are going to care about objects closer than 50cm. 
+		// @
+		if(wFL > 500.0){
+			csensorNearLeft = sensorOff;
+			g2.setColor(csensorNearLeft);
+			g2.fillOval(this.getWidth()/6, 50, 15, 250);
+			g2.setColor(Color.yellow);
+			g2.drawString("" + df.format(wFL), this.getWidth()/6-15, 125);
+		}
+		else {
+			csensorNearLeft = sensorOn;
+			double avgLeft = (wFL + wNL) / 2;
+			g2.setColor(csensorNearLeft);
+			g2.fillOval(this.getWidth()/6, 50, 15, 250);
+			g2.setColor(Color.yellow);
+			g2.drawString("" + df.format(avgLeft), this.getWidth()/6-15, 125);
+			System.out.println("Left " + wFL + " " + wNL);
+		}
+		// END Museum code
+		
+		 
+        /* Commented for Museum. We want a simpler Interface
         
         if(wNR>450.0){
         	csensorNearRight = sensorOff;
@@ -227,6 +275,30 @@ public class SensorInfoPanel extends JPanel implements Runnable {
         g2.fillOval(this.getWidth()-45, 50, 15, 250);
         g2.setColor(Color.yellow);
         g2.drawString("FR" + df.format(wFR), this.getWidth()/8*7-15, 70);
+		*/ 
+		 
+		// Right sensors for Museum. 
+		// We are going to care about objects closer than 50cm. 
+		// @
+		if(wFR > 500.0){
+			csensorNearRight = sensorOff;
+			g2.setColor(csensorNearRight);
+			g2.fillOval(this.getWidth()/6*5-15, 50, 15, 250);
+			g2.setColor(Color.yellow);
+			g2.drawString("" + df.format(wFR), this.getWidth()/8*7-45, 125);
+		}
+		else {
+			csensorNearRight = sensorOn;
+			double avgRight= (wFR + wNR) / 2;
+			g2.setColor(csensorNearRight);
+			g2.fillOval(this.getWidth()/6*5-15, 50, 15, 250);
+			g2.setColor(Color.yellow);
+			g2.drawString("" + df.format(avgRight), this.getWidth()/8*7-45, 125);
+			System.out.println("Right " + wFR + " " + wNR);
+		}
+		// END Museum code
+		 
+		 
 	}
 
 	@Override
